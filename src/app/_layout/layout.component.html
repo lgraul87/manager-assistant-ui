@@ -1,0 +1,36 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="side-menu" mode="side" opened (openedChange)="print($event)">
+
+        <mat-nav-list>
+            <mat-list-item routerLink="/candidates" routerLinkActive="active">
+                <mat-icon mat-list-icon>people</mat-icon>
+                <span matLine>CANDIDATES</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/employees" routerLinkActive="active">
+                <mat-icon mat-list-icon>badge</mat-icon>
+                <span matLine>EMPLOYEES</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/profile" routerLinkActive="active">
+                <mat-icon mat-list-icon>settings_suggest</mat-icon>
+                <span matLine>PROFILE</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/logout" routerLinkActive="active">
+                <mat-icon mat-list-icon>logout</mat-icon>
+                <span matLine>LOG OUT</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content class="content">
+        <mat-toolbar color="primary" class="mat-elevation-z8">
+            <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>My App</span>
+            <span class="spacer"></span>
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+</mat-drawer-container>
