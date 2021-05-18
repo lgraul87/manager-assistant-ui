@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    padding: 24px;
+}
+
+table {
+    width: 100%;
+}
+
+.btn-add {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+}
+
+.btn-edit {
+    position: absolute;
+    right: 84px;
+    top: 110px;
+    background-color: rgb(255, 187, 0);
+}
+
+.btn-delete {
+    position: absolute;
+    right: 24px;
+    top: 110px;
+}
+
+.mat-form-field {
+    font-size: 20px;
+    width: 100%;
+}

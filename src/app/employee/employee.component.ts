@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeesService } from '../employee-services/employees.service';
+import { EmployeesService } from '../_shared/services/employees.service';
 import { Employee } from '../_shared/interfaces/employee';
+import { Router } from '@angular/router';
+
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-employee',
@@ -9,13 +13,37 @@ import { Employee } from '../_shared/interfaces/employee';
 })
 export class EmployeeComponent implements OnInit {
 
-  employees: Employee[] = []
-  constructor(private employeesService: EmployeesService) { }
+  displayedColumns: string[] = ['select', 'name', 'lastName', 'dni'];
+  dataSource = new MatTableDataSource<Employee>([]);
+  selection = new SelectionModel<Employee>(true, []);
+
+  constructor(private router: Router,
+    private employeesService: EmployeesService) { }
 
   ngOnInit(): void {
-    this.get();
+    this.employeesService.getEmployees().subscribe((employees) => this.dataSource.data = employees);
   }
-  get() {
-    this.employeesService.getEmployees().subscribe((data) => this.employees = data);
+
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
   }
+
+  masterToggle() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  goToAddEmployee() {
+    this.router.navigateByUrl('employees/add-employee');
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  
 }

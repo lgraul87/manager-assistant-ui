@@ -13,4 +13,12 @@ export class CandidatesService {
     getCandidates(): Observable<Candidate[]> {
         return this.http.get<Candidate[]>("http://localhost:3000/candidates");
     }
+
+    getCandidate(id:string): Observable<Candidate> {
+        return this.http.get<Candidate>(`http://localhost:3000/candidates/${id}`);
+    }
+
+    addCandidate(candidate: Candidate){
+       return this.http.post("http://localhost:3000/candidates", candidate);
+    }
 }

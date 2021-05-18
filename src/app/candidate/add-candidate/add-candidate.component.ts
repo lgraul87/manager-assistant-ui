@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CandidatesService } from 'src/app/_shared/services/candidates.service';
+
 @Component({
   selector: 'app-add-candidate',
   templateUrl: './add-candidate.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCandidateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private candidatesService: CandidatesService,
+  ) { }
 
   ngOnInit(): void {
   }
-
 }

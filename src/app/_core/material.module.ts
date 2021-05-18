@@ -12,8 +12,12 @@ import { MatTableModule } from '@angular/material/table';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 const material = [
@@ -27,7 +31,11 @@ const material = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatCheckboxModule,
+    MatPaginatorModule,
+    MatProgressBarModule
 ];
 
 @NgModule({

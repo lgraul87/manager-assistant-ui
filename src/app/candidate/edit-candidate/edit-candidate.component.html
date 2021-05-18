@@ -1,0 +1,66 @@
+<div *ngIf="!candidate">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="candidate">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around">
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="{{candidate.name}}">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Technology</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>LinkedIn</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Notice Period (weeks)</mat-label>
+            <mat-select value=1>
+                <mat-option value=1>One week</mat-option>
+                <mat-option value=2>Two weeks</mat-option>
+                <mat-option value=3>Three weeks</mat-option>
+                <mat-option value=4>Four weeks</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45" appearance="outline">
+            <mat-label>Comments</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+
+        <div fxFlex="45" fxLayout="column wrap">
+            <mat-slide-toggle fxFlex>Remote</mat-slide-toggle>
+            <mat-slide-toggle fxFlex>Available</mat-slide-toggle>
+        </div>
+    </div>
+
+    <button class="btn-edit" mat-fab color="primary">
+        <mat-icon>edit</mat-icon>
+    </button>
+</div>
