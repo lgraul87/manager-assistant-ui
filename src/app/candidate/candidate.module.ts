@@ -6,13 +6,17 @@ import { CandidateRoutingModule } from './candidate-routing.module';
 import { MaterialModule } from '../_core/material.module';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeleteCandidateComponent } from './delete-candidate/delete-candidate.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CandidateRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [CandidateComponent, AddCandidateComponent, EditCandidateComponent]
+  declarations: [CandidateComponent, AddCandidateComponent, EditCandidateComponent, DeleteCandidateComponent]
 })
 export class CandidateModule { }

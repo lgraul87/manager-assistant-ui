@@ -14,11 +14,17 @@ export class CandidatesService {
         return this.http.get<Candidate[]>("http://localhost:3000/candidates");
     }
 
-    getCandidate(id:string): Observable<Candidate> {
+    getCandidate(id: string): Observable<Candidate> {
         return this.http.get<Candidate>(`http://localhost:3000/candidates/${id}`);
     }
 
-    addCandidate(candidate: Candidate){
-       return this.http.post("http://localhost:3000/candidates", candidate);
+    addCandidate(candidate: Candidate): Observable<Candidate> {
+        return this.http.post<Candidate>("http://localhost:3000/candidates", candidate);
+    }
+    editCandidate(candidate: Candidate): Observable<Candidate> {
+        return this.http.put<Candidate>("http://localhost:3000/candidates/" + candidate.id, candidate);
+    }
+    deleteCandidate(id: string): Observable<Candidate> {
+        return this.http.delete<Candidate>(`http://localhost:3000/candidates/${id}`);
     }
 }

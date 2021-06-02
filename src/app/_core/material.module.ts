@@ -18,7 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 const material = [
     MatSidenavModule,
@@ -35,7 +35,8 @@ const material = [
     MatSnackBarModule,
     MatCheckboxModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
 ];
 
 @NgModule({

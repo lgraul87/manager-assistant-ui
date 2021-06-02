@@ -1,0 +1,101 @@
+<div *ngIf="!employee">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="employee">
+    <form [formGroup]="form">
+        <div fxLayout="row wrap" fxLayoutAlign="space-around">
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput placeholder="{{employee.name}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input formControlName="lastName" matInput placeholder="{{employee.lastName}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Dni</mat-label>
+                <input formControlName="dni" matInput placeholder="{{employee.dni}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input formControlName="email" matInput placeholder="{{employee.email}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input formControlName="phone" matInput placeholder="{{employee.phone}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>City</mat-label>
+                <input formControlName="city" matInput placeholder="{{employee.city}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Technology</mat-label>
+                <input formControlName="technology" matInput placeholder="{{employee.technology}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>LinkedIn</mat-label>
+                <input formControlName="linkedIn" matInput placeholder="{{employee.linkedIn}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Notice Period (weeks)</mat-label>
+                <mat-select formControlName="noticePeriod" value=1>
+                    <mat-option value=1>One week</mat-option>
+                    <mat-option value=2>Two weeks</mat-option>
+                    <mat-option value=3>Three weeks</mat-option>
+                    <mat-option value=4>Four weeks</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Experience</mat-label>
+                <input formControlName="experience" matInput placeholder="{{employee.experience}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Salary</mat-label>
+                <input formControlName="salary" matInput placeholder="{{employee.salary}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Position</mat-label>
+                <input formControlName="position" matInput placeholder="{{employee.position}}">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Seniority</mat-label>
+                <textarea formControlName="seniority" matInput placeholder="{{employee.seniority}}"></textarea>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>SS-Number</mat-label>
+                <textarea formControlName="ssNumber" matInput placeholder="{{employee.ssNumber}}"></textarea>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>IBAN</mat-label>
+                <textarea formControlName="iban" matInput placeholder="{{employee.iban}}"></textarea>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Comments</mat-label>
+                <textarea formControlName="comments" matInput placeholder="{{employee.comments}}"></textarea>
+            </mat-form-field>
+
+            <div fxFlex="45" fxLayout="column wrap">
+                <mat-slide-toggle formControlName="isRemote" fxFlex>Remote</mat-slide-toggle>
+            </div>
+        </div>
+    </form>
+
+    <button class="btn-edit" mat-fab color="primary" (click)="editEmployee()">
+        <mat-icon>edit</mat-icon>
+    </button>
+</div>

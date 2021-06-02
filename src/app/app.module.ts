@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LayoutModule } from './_layout/layout.module';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
 
 
 @NgModule({
