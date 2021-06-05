@@ -6,37 +6,66 @@
         <div fxLayout="row wrap" fxLayoutAlign="space-around">
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>Name</mat-label>
-                <input formControlName="name" matInput placeholder="{{candidate.name}}">
+                <input formControlName="name" matInput placeholder="Name" required>
+                <mat-error *ngIf="name.hasError('required')">Name is required</mat-error>
+                <mat-error *ngIf="name.hasError('minlength')">Name is too short, minimum of 3 characters</mat-error>
+                <mat-error *ngIf="name.hasError('maxlength')">Name is too long, maximum 30 characters</mat-error>
+                <mat-error *ngIf="!name.hasError('minlength') && name.hasError('pattern')">Numbers are not allowed
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>Last Name</mat-label>
-                <input formControlName="lastName" matInput placeholder="Placeholder">
+                <input formControlName="lastName" matInput placeholder="Last Name" required>
+                <mat-error *ngIf="lastName.hasError('required')">Last Name is required</mat-error>
+                <mat-error *ngIf="lastName.hasError('minlength')">Last Name is too short, minimum of 3 characters
+                </mat-error>
+                <mat-error *ngIf="lastName.hasError('maxlength')">Last Name is too long, maximum 30 characters
+                </mat-error>
+                <mat-error *ngIf="!lastName.hasError('minlength') && lastName.hasError('pattern')">Numbers are not allowed
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>E-mail</mat-label>
-                <input formControlName="email" matInput placeholder="Placeholder">
+                <input formControlName="email" matInput placeholder="E-mail" required>
+                <mat-error *ngIf="email.hasError('required')">E-mail is required</mat-error>
+                <mat-error *ngIf="email.hasError('email')">Email is not a valid email</mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>Phone</mat-label>
-                <input formControlName="phone" matInput placeholder="Placeholder">
+                <input formControlName="phone" matInput placeholder="Phone">
+                <mat-error *ngIf="phone.hasError('pattern')">Phone must contain 9 numbers</mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>City</mat-label>
-                <input formControlName="city" matInput placeholder="Placeholder">
+                <input formControlName="city" matInput placeholder="City" required>
+                <mat-error *ngIf="city.hasError('required')">City is required</mat-error>
+                <mat-error *ngIf="city.hasError('minlength')">City is too short, minimum of 3 characters</mat-error>
+                <mat-error *ngIf="city.hasError('maxlength')">City is too long, maximum 30 characters</mat-error>
+                <mat-error *ngIf="!city.hasError('minlength') && city.hasError('pattern')">Numbers are not allowed
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>Technology</mat-label>
-                <input formControlName="technology" matInput placeholder="Placeholder">
+                <input formControlName="technology" matInput placeholder="Technologies" required>
+                <mat-error *ngIf="technology.hasError('required')">Technology is required</mat-error>
+                <mat-error *ngIf="technology.hasError('minlength')">Technology is too short, minimum of 2 characters
+                </mat-error>
+                <mat-error *ngIf="technology.hasError('maxlength')">Technology is too long, maximum 255 characters
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>LinkedIn</mat-label>
-                <input formControlName="linkedIn" matInput placeholder="Placeholder">
+                <input formControlName="linkedIn" matInput placeholder="LinkedIn">
+                <mat-error *ngIf="linkedIn.hasError('minlength')">LinkedIn is too short, minimum of 7 characters
+                </mat-error>
+                <mat-error *ngIf="linkedIn.hasError('maxlength')">LinkedIn is too long, maximum 100 characters
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
@@ -50,13 +79,27 @@
             </mat-form-field>
 
             <mat-form-field fxFlex="45" appearance="outline">
+                <mat-label>Experienced since</mat-label>
+                <input matInput [matDatepicker]="picker" [matDatepickerFilter]="dateFilter" formControlName="experience">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="45" appearance="outline">
                 <mat-label>Comments</mat-label>
-                <textarea formControlName="comments" matInput></textarea>
+                <textarea formControlName="comments" matInput placeholder="Comments"></textarea>
+                <mat-error *ngIf="comments.hasError('minlength')">Comments is too short, minimum of 10 characters
+                </mat-error>
+                <mat-error *ngIf="comments.hasError('maxlength')">Comments is too long, maximum 100 characters
+                </mat-error>
             </mat-form-field>
 
             <div fxFlex="45" fxLayout="column wrap">
                 <mat-slide-toggle formControlName="isRemote" fxFlex>Remote</mat-slide-toggle>
                 <mat-slide-toggle formControlName="isAvailable" fxFlex>Available</mat-slide-toggle>
+            </div>
+            <div fxFlex="45">
+
             </div>
         </div>
     </form>

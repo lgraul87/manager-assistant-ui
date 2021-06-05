@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CandidatesService } from 'src/app/_shared/services/candidates.service';
-
 
 @Component({
   selector: 'app-add-candidate',
@@ -15,7 +15,8 @@ export class AddCandidateComponent implements OnInit {
 
   constructor(private router: Router,
     private fb: FormBuilder,
-    private candidateService: CandidatesService) { }
+    private candidateService: CandidatesService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -24,7 +25,14 @@ export class AddCandidateComponent implements OnInit {
   addCandidate() {
     this.candidateService.addCandidate(this.form.value).subscribe(() => {
       this.router.navigateByUrl('candidates');
+      this.snackBar.open('Candidate added correctly', '', { duration: 5000 });
     });
+  }
+
+  dateFilter(d: Date | null): boolean {
+    const now = new Date();
+    const date = (d || now);
+    return date.getTime() <= now.getTime();
   }
 
   get name() {
@@ -51,16 +59,26 @@ export class AddCandidateComponent implements OnInit {
     return this.form.controls.phone;
   }
 
+  get linkedIn() {
+    return this.form.controls.linkedIn;
+  }
+
+  get comments() {
+    return this.form.controls.comments;
+  }
+
   private initForm() {
     this.form = this.fb.group({
       name: ["", [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
       lastName: ["", [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
       email: ["", [
@@ -73,15 +91,24 @@ export class AddCandidateComponent implements OnInit {
       city: ["", [
         Validators.required,
         Validators.minLength(3),
+        Validators.maxLength(30),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
       technology: ["", [
         Validators.required,
-        Validators.minLength(2)
+        Validators.minLength(2),
+        Validators.maxLength(255),
       ]],
-      linkedIn: "",
+      linkedIn: ["",[
+        Validators.minLength(7),
+        Validators.maxLength(100)
+      ]],
       noticePeriod: "1",
-      comments: "",
+      comments: ["",[
+        Validators.minLength(10),
+        Validators.maxLength(255)
+      ]],
+      experience: new Date(),
       isRemote: false,
       isAvailable: false
     });

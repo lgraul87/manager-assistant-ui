@@ -17,8 +17,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const material = [
     MatSidenavModule,
@@ -36,7 +38,9 @@ const material = [
     MatCheckboxModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 ];
 
 @NgModule({
@@ -48,5 +52,8 @@ const material = [
         FlexLayoutModule,
         ...material
     ],
+    providers: [
+        MatDatepickerModule
+    ]
 })
 export class MaterialModule { }
