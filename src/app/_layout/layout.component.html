@@ -1,6 +1,5 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="side-menu" mode="side" opened (openedChange)="print($event)">
-
+    <mat-drawer color="primary" #drawer class="side-menu" mode="side" opened>
         <mat-nav-list>
             <mat-list-item routerLink="/candidates" routerLinkActive="active">
                 <mat-icon mat-list-icon>people</mat-icon>
@@ -22,7 +21,7 @@
         </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content class="content">
-        <mat-toolbar color="primary" class="mat-elevation-z8">
+        <mat-toolbar color="primary">
             <button mat-icon-button (click)="drawer.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>

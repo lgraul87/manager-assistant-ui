@@ -1,5 +1,5 @@
 <div>
-    <div class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
+    <div *ngIf="dataSource.data.length > 0" class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
         <mat-form-field>
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Enter value" #input>
@@ -18,7 +18,7 @@
         </button>
     </div>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" *ngIf="dataSource.data.length > 0">
 
         <ng-container matColumnDef="select">
             <th mat-header-cell *matHeaderCellDef>
@@ -51,10 +51,28 @@
         </tr>
     </table>
 
-    <div>
+    <div *ngIf="dataSource.data.length > 0">
         <mat-paginator [length]="dataSource.data.length" [pageSize]="10"></mat-paginator>
     </div>
+
+    <div *ngIf="dataSource.data.length === 0">
+        <p class="first-employee">Add employees here</p>
+    </div>
+
+
     <button class="btn-add" mat-fab color="primary" (click)="goToAddEmployee()">
         <mat-icon>add</mat-icon>
     </button>
+
+    <mat-card *ngIf="dataSource.data.length === 0" class="card">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>Manager Assistant</mat-card-title>
+            <mat-card-subtitle>Info</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/employees.jpg">
+        <mat-card-content class="welcome-text">
+            Welcome to the section employees. <br> You can add your first employee for your application. <br> Please, add employees using the button ADD that are in the part of down-right with the symbol "plus" inside --->
+        </mat-card-content>
+    </mat-card>
 </div>

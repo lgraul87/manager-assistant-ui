@@ -58,6 +58,9 @@ export class AddCandidateComponent implements OnInit {
   get phone() {
     return this.form.controls.phone;
   }
+  get experience() {
+    return this.form.controls.experience;
+  }
 
   get linkedIn() {
     return this.form.controls.linkedIn;
@@ -108,7 +111,9 @@ export class AddCandidateComponent implements OnInit {
         Validators.minLength(10),
         Validators.maxLength(255)
       ]],
-      experience: new Date(),
+      experience: [new Date(),[
+        Validators.required
+      ]],
       isRemote: false,
       isAvailable: false
     });

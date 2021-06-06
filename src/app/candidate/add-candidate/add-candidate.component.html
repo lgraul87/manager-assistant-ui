@@ -69,6 +69,7 @@
         <mat-form-field fxFlex="45" appearance="outline">
             <mat-label>Experienced since</mat-label>
             <input matInput [matDatepicker]="picker" [matDatepickerFilter]="dateFilter" formControlName="experience" required>
+            <mat-error *ngIf="experience.hasError('required')">Experience is required</mat-error>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

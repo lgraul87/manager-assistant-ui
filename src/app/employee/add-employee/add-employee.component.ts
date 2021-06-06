@@ -134,7 +134,9 @@ export class AddEmployeeComponent implements OnInit {
         Validators.minLength(7),
         Validators.maxLength(100)
       ]],
-      experience: new Date(),
+      experience: [new Date(),[
+        Validators.required
+      ]],
       salary: ["", [
         Validators.required,
         Validators.minLength(5),
