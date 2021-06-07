@@ -7,6 +7,20 @@ table {
     width: 100%;
 }
 
+th,
+td {
+    width: 6%;
+}
+
+th {
+    font-weight: bold;
+}
+
+td {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
 .first-candidate {
     position: absolute;
     bottom: 75px;

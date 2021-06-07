@@ -154,12 +154,12 @@ export class AddEmployeeComponent implements OnInit {
         Validators.maxLength(30),
       ]],
       ssNumber: ["", [
-        Validators.pattern("/^(\d{2})(\d{2})(\d{2})\d{5}$/")
+        Validators.pattern("[0-9]{12}")
       ]],
 
       iban: ["", [
         Validators.required,
-        Validators.pattern("\b[A-Z]{2}[0-9]{2}(?:[ ]?[0-9]{4}){4}(?!(?:[ ]?[0-9]){3})(?:[ ]?[0-9]{1,2})?\b")
+        Validators.pattern("[A-Za-z]{2}[0-9]{22}")
       ]],
       comments: ["",[
         Validators.minLength(3),
