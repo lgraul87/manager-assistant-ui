@@ -18,7 +18,7 @@
         </button>
     </div>
 
-    <table mat-table [dataSource]="dataSource" *ngIf="dataSource.data.length > 0">
+    <table class="table" mat-table [dataSource]="dataSource" *ngIf="dataSource.data.length > 0">
 
         <ng-container matColumnDef="select">
             <th mat-header-cell *matHeaderCellDef>
