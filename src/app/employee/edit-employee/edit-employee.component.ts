@@ -98,64 +98,64 @@ export class EditEmployeeComponent implements OnInit {
   private initForm(employee: Employee) {
     this.form = this.fb.group({
       id:employee.id,
-      name: ["", [
+      name: [employee.name, [
         Validators.required,
         Validators.minLength(3),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
-      lastName: ["", [
+      lastName: [employee.lastName, [
         Validators.required,
         Validators.minLength(3),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
-      dni: ["", [
+      dni: [employee.dni, [
         Validators.required,
         Validators.pattern("[0-9]{8}[A-Za-z]{1}")
       ]],
-      email: ["", [
+      email: [employee.email, [
         Validators.required,
         Validators.email
       ]],
-      phone: ["", [
+      phone: [employee.phone, [
         Validators.pattern("[0-9]{9}")
       ]],
-      city: ["", [
+      city: [employee.city, [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
         Validators.pattern('^[ a-zA-ZÀ-ÿ\\u00f1\\u00d1]*$')
       ]],
-      technology: ["", [
+      technology: [employee.technology, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(255),
       ]],
-      linkedIn: ["", [
+      linkedIn: [employee.linkedIn, [
         Validators.minLength(7),
         Validators.maxLength(100)
       ]],
       experience: new Date(),
-      salary: ["", [
+      salary: [employee.salary, [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(6),
         Validators.pattern("[1-9]{1}[0-9]+")
       ]],
-      position: ["", [
+      position: [employee.position, [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
       ]],
-      seniority: ["", [
+      seniority: [employee.seniority, [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
       ]],
-      ssNumber: ["", [
+      ssNumber: [employee.ssNumber, [
         Validators.pattern("[0-9]{12}")
       ]],
 
-      iban: ["", [
+      iban: [employee.iban, [
         Validators.required,
         Validators.pattern("[A-Za-z]{2}[0-9]{22}")
       ]],
@@ -164,8 +164,8 @@ export class EditEmployeeComponent implements OnInit {
         Validators.maxLength(255),
       ]],
 
-      noticePeriod: "",
-      isRemote: ""
+      noticePeriod: employee.noticePeriod,
+      isRemote: employee.isRemote
     });
   }
 }
