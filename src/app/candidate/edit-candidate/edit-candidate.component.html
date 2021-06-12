@@ -104,7 +104,7 @@
         </div>
     </form>
 
-    <button class="btn-edit" mat-fab color="primary" (click)="editCandidate()">
+    <button class="btn-edit" mat-fab color="primary" [disabled]="!form.valid" (click)="editCandidate()">
         <mat-icon>edit</mat-icon>
     </button>
 </div>

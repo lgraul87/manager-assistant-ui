@@ -134,6 +134,6 @@
     </div>
 </form>
 
-<button class="btn-add" mat-fab color="primary" (click)="addEmployee()">
+<button class="btn-add" mat-fab color="primary" [disabled]="!form.valid" (click)="addEmployee()">
         <mat-icon>add</mat-icon>
     </button>

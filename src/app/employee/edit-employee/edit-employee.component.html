@@ -132,7 +132,7 @@
         </div>
     </form>
 
-    <button class="btn-edit" mat-fab color="primary" (click)="editEmployee()">
+    <button class="btn-edit" mat-fab color="primary" [disabled]="!form.valid" (click)="editEmployee()">
         <mat-icon>edit</mat-icon>
     </button>
 </div>
