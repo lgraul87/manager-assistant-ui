@@ -1,6 +1,6 @@
 <form [formGroup]="form">
     <div fxLayout="row wrap" fxLayoutAlign="space-around">
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Name</mat-label>
             <input formControlName="name" matInput placeholder="Name" required>
             <mat-error *ngIf="name.hasError('required')">Name is required</mat-error>
@@ -8,7 +8,7 @@
             <mat-error *ngIf="!name.hasError('minlength') && name.hasError('pattern')">Numbers are not allowed</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Last Name</mat-label>
             <input formControlName="lastName" matInput placeholder="Last Name" required>
             <mat-error *ngIf="lastName.hasError('required')">Last Name is required</mat-error>
@@ -16,26 +16,26 @@
             <mat-error *ngIf="!lastName.hasError('minlength') && lastName.hasError('pattern')">Numbers are not allowed</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Dni</mat-label>
             <input formControlName="dni" matInput placeholder="Dni" required>
             <mat-error *ngIf="dni.hasError('pattern')">Dni not valid</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>E-mail</mat-label>
             <input formControlName="email" matInput placeholder="E-Mail" required>
             <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
             <mat-error *ngIf="email.hasError('email')">Email is not a valid email</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Phone</mat-label>
             <input formControlName="phone" matInput placeholder="Phone">
             <mat-error *ngIf="phone.hasError('pattern')">Phone must contain 9 numbers</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>City</mat-label>
             <input formControlName="city" matInput placeholder="City" required>
             <mat-error *ngIf="city.hasError('required')">City is required</mat-error>
@@ -44,7 +44,7 @@
             <mat-error *ngIf="!city.hasError('minlength') && city.hasError('pattern')">Numbers are not allowed</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Technology</mat-label>
             <input formControlName="technology" matInput placeholder="Technology" required>
             <mat-error *ngIf="technology.hasError('required')">Technology is required</mat-error>
@@ -52,14 +52,14 @@
             <mat-error *ngIf="technology.hasError('maxlength')">Technology is too long, maximum 255 characters</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>LinkedIn</mat-label>
             <input formControlName="linkedIn" matInput placeholder="LinkedIn">
             <mat-error *ngIf="linkedIn.hasError('minlength')">LinkedIn is too short, minimum of 7 characters</mat-error>
             <mat-error *ngIf="linkedIn.hasError('maxlength')">LinkedIn is too long, maximum 100 characters</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Notice Period (weeks)</mat-label>
             <mat-select formControlName="noticePeriod" value=1>
                 <mat-option value=1>One week</mat-option>
@@ -69,7 +69,7 @@
             </mat-select>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Experienced since</mat-label>
             <input matInput [matDatepicker]="picker" [matDatepickerFilter]="dateFilter" formControlName="experience" required>
             <mat-error *ngIf="experience.hasError('required')">Experience is required</mat-error>
@@ -77,7 +77,7 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Salary</mat-label>
             <input formControlName="salary" matInput placeholder="Salary" required>
             <mat-error *ngIf="salary.hasError('required')">Salary is required</mat-error>
@@ -87,7 +87,7 @@
             <mat-error *ngIf="salary.hasError('pattern') && !salary.hasError('minlength') && !salary.hasError('maxlength')">Only numbers are supported (from:10000 until:999999 by year)</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Position</mat-label>
             <input formControlName="position" matInput placeholder="Position" required>
             <mat-error *ngIf="position.hasError('required')">Position is required</mat-error>
@@ -95,7 +95,7 @@
             <mat-error *ngIf="position.hasError('maxlength')">Position is too long, maximum 30 characters</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Seniority</mat-label>
             <textarea formControlName="seniority" matInput placeholder="Seniority" required></textarea>
             <mat-error *ngIf="seniority.hasError('required')">Position is required</mat-error>
@@ -103,32 +103,32 @@
             <mat-error *ngIf="seniority.hasError('maxlength')">Position is too long, maximum 30 characters</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>SS-Number</mat-label>
             <textarea formControlName="ssNumber" matInput placeholder="SS-Number" required></textarea>
             <mat-error *ngIf="ssNumber.hasError('required')">SS-Number is required</mat-error>
             <mat-error *ngIf="ssNumber.hasError('pattern')">SS-Number must be a valid number</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>IBAN</mat-label>
             <textarea formControlName="iban" matInput placeholder="IBAN" required></textarea>
             <mat-error *ngIf="iban.hasError('required')">IBAN is required</mat-error>
             <mat-error *ngIf="iban.hasError('pattern')">IBAN must be a valid number</mat-error>
         </mat-form-field>
 
-        <mat-form-field fxFlex="45" appearance="outline">
+        <mat-form-field fxFlex="30" appearance="outline">
             <mat-label>Comments</mat-label>
             <textarea formControlName="comments" matInput placeholder="Comments"></textarea>
             <mat-error *ngIf="comments.hasError('minlength')">Comments is too short, minimum of 3 characters</mat-error>
             <mat-error *ngIf="comments.hasError('maxlength')">Comments is too long, maximum 255 characters</mat-error>
         </mat-form-field>
 
-        <div fxFlex="45" fxLayout="column wrap">
+        <div fxFlex="30" fxLayout="column wrap">
             <mat-slide-toggle formControlName="isRemote" fxFlex>Remote</mat-slide-toggle>
         </div>
 
-        <div fxFlex="45">
+        <div fxFlex="30">
         </div>
 
     </div>
