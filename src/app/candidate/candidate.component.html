@@ -5,6 +5,7 @@
             <input matInput (keyup)="applyFilter($event)" placeholder="Enter value" #input>
         </mat-form-field>
     </div>
+
     <div *ngIf="this.selection.selected.length === 1">
         <button mat-mini-fab class="btn-edit" (click)="goToEditCandidate()">
             <mat-icon>edit</mat-icon>
@@ -115,9 +116,11 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row) "></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+            </tr>
         </table>
     </div>
+
     <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="dataSource.data.length> 0">
         <mat-paginator fxFlex="90" [length]="dataSource.data.length" [pageSize]="10"></mat-paginator>
     </div>
