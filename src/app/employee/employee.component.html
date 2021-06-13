@@ -1,5 +1,5 @@
 <div>
-    <div div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="dataSource.data.length > 0" class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
+    <div div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="isReady && dataSource.data.length > 0" class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
         <mat-form-field fxFlex="90">
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Enter value" #input>
@@ -18,7 +18,7 @@
         </button>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="dataSource.data.length > 0">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="isReady && dataSource.data.length > 0">
         <table fxFlex="90" mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="select">
                 <th mat-header-cell *matHeaderCellDef>
@@ -101,7 +101,7 @@
         <mat-paginator fxFlex="90" [length]="dataSource.data.length" [pageSize]="10"></mat-paginator>
     </div>
 
-    <div *ngIf="dataSource.data.length === 0">
+    <div *ngIf="isReady && dataSource.data.length === 0">
         <p class="first-employee">Add employees here</p>
     </div>
 
@@ -110,7 +110,7 @@
         <mat-icon>add</mat-icon>
     </button>
 
-    <mat-card *ngIf="dataSource.data.length === 0" class="card">
+    <mat-card *ngIf="isReady && dataSource.data.length === 0" class="card">
         <mat-card-header>
             <div mat-card-avatar class="header-image"></div>
             <mat-card-title>Manager Assistant</mat-card-title>

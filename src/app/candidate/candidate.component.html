@@ -1,5 +1,5 @@
 <div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="dataSource.data.length > 0" class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="isReady && dataSource.data.length > 0" class="filter-box" [style.visibility]="(this.selection.selected.length === 0) ? 'visible' : 'hidden'">
         <mat-form-field fxFlex="90">
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Enter value" #input>
@@ -18,7 +18,7 @@
     </div>
 
     <div fxLayout="row wrap" fxLayoutAlign="space-around">
-        <table fxFlex="90" mat-table [dataSource]="dataSource" *ngIf="dataSource.data.length > 0" mat-table>
+        <table fxFlex="90" mat-table [dataSource]="dataSource" *ngIf="isReady && dataSource.data.length > 0" mat-table>
 
             <ng-container matColumnDef="select">
                 <th mat-header-cell *matHeaderCellDef>
@@ -107,18 +107,18 @@
         </table>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="dataSource.data.length> 0">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" *ngIf="isReady && dataSource.data.length> 0">
         <mat-paginator fxFlex="90" [length]="dataSource.data.length" [pageSize]="10"></mat-paginator>
     </div>
 
-    <div *ngIf="dataSource.data.length === 0">
+    <div *ngIf="isReady && dataSource.data.length === 0">
         <p class="first-candidate">Add candidates here</p>
     </div>
     <button class="btn-add" mat-fab color="primary" (click)="goToAddCandidate()">
         <mat-icon>add</mat-icon>
     </button>
 
-    <mat-card *ngIf="dataSource.data.length === 0" class="card">
+    <mat-card *ngIf="isReady && dataSource.data.length === 0" class="card">
         <mat-card-header>
             <div mat-card-avatar class="header-image"></div>
             <mat-card-title>Manager Assistant</mat-card-title>

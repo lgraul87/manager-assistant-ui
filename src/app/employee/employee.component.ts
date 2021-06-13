@@ -19,6 +19,7 @@ export class EmployeeComponent implements OnInit {
 
   employee!: Employee;
   employees!: Employee[];
+  isReady = false;
 
   displayedColumns: string[] = ['select', 'name', 'lastName','email','phone','city','technology',
   'experience','isRemote','salary','position','seniority','noticePeriod'];
@@ -35,6 +36,7 @@ export class EmployeeComponent implements OnInit {
     this.employeesService.getEmployees().subscribe((employees) =>{
       this.employees = employees
      this.dataSource.data = this.employees;
+     this.isReady = true;
     });
   }
 

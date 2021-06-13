@@ -21,9 +21,10 @@ export class CandidateComponent implements OnInit {
 
   candidate!: Candidate;
   candidates!: Candidate[];
+  isReady = false;
 
-  displayedColumns: string[] = ['select', 'name', 'last name','email','phone','isAvailable',
-  'city','technology','experience','isRemote','noticePeriod'];
+  displayedColumns: string[] = ['select', 'name', 'last name', 'email', 'phone', 'isAvailable',
+    'city', 'technology', 'experience', 'isRemote', 'noticePeriod'];
   dataSource = new MatTableDataSource<Candidate>([]);
   selection = new SelectionModel<Candidate>(true, []);
 
@@ -39,6 +40,7 @@ export class CandidateComponent implements OnInit {
     this.candidatesService.getCandidates().subscribe((candidates) => {
       this.candidates = candidates;
       this.dataSource.data = this.candidates;
+      this.isReady = true;
     });
   }
 
