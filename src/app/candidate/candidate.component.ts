@@ -59,7 +59,6 @@ export class CandidateComponent implements OnInit {
 
   goToEditCandidate() {
     this.candidate = this.selection.selected[0];
-    this.router.navigate(['candidates/edit-candidate', this.candidate.id]);
   }
 
   openDeleteCandidates() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from 'src/app/_shared/interfaces/employee';
 import { EmployeesService } from 'src/app/_shared/services/employees.service';
@@ -19,7 +20,8 @@ export class EditEmployeeComponent implements OnInit {
     private routerNavigate: Router,
     private route: ActivatedRoute,
     private employeesService: EmployeesService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -92,6 +94,8 @@ export class EditEmployeeComponent implements OnInit {
   editEmployee() {
     this.employeesService.editEmployee(this.form.value).subscribe(() => {
       this.routerNavigate.navigate(["employees"]);
+      this.snackBar.open('Employee edited correctly', '', { duration: 5000 });
+
     });
   }
 

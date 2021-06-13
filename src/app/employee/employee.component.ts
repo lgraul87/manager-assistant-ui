@@ -58,7 +58,6 @@ export class EmployeeComponent implements OnInit {
   goToEditEmployee() {
     this.employee = this.selection.selected[0];
     this.router.navigate(['employees/edit-employee', this.employee.id]);
-    this.snackBar.open('Employee edited correctly', '', { duration: 5000 });
   }
 
   openDeleteEmployees() {
