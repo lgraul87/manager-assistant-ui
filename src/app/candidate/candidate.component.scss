@@ -7,11 +7,6 @@ table {
     width: 100%;
 }
 
-th,
-td {
-    width: 6%;
-}
-
 th {
     font-weight: bold;
 }
@@ -19,16 +14,6 @@ th {
 td {
     margin-left: 3px;
     margin-right: 3px;
-}
-
-.first-candidate {
-    position: absolute;
-    bottom: 75px;
-    right: 24px;
-    font-weight: bold;
-    color: red;
-    border-style: dashed double none;
-    font-size: 1.5em;
 }
 
 .btn-add {
@@ -57,11 +42,6 @@ td {
 
 .card {
     max-width: 60%;
-}
-
-.header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
 }
 
 .welcome-text {

@@ -16,16 +16,6 @@ td {
     margin-right: 3px;
 }
 
-.first-employee {
-    position: absolute;
-    bottom: 75px;
-    right: 24px;
-    font-weight: bold;
-    color: red;
-    border-style: dashed double none;
-    font-size: 1.5em;
-}
-
 .btn-add {
     position: absolute;
     bottom: 24px;
@@ -57,9 +47,4 @@ td {
 .welcome-text {
     font-size: 1.1em;
     font-weight: bold;
-}
-
-.header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
 }

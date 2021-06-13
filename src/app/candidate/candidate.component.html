@@ -111,16 +111,13 @@
         <mat-paginator fxFlex="90" [length]="dataSource.data.length" [pageSize]="10"></mat-paginator>
     </div>
 
-    <div *ngIf="isReady && dataSource.data.length === 0">
-        <p class="first-candidate">Add candidates here</p>
-    </div>
+
     <button class="btn-add" mat-fab color="primary" (click)="goToAddCandidate()">
         <mat-icon>add</mat-icon>
     </button>
 
     <mat-card *ngIf="isReady && dataSource.data.length === 0" class="card">
         <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
             <mat-card-title>Manager Assistant</mat-card-title>
             <mat-card-subtitle>Info</mat-card-subtitle>
         </mat-card-header>
