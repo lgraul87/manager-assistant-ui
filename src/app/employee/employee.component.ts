@@ -20,9 +20,8 @@ export class EmployeeComponent implements OnInit {
   employee!: Employee;
   employees!: Employee[];
 
-  displayedColumns: string[] = ['select', 'name', 'lastName', 'dni','email','phone','city','technology',
-  'experience','isRemote','salary','position','seniority','ssNumber','iban','linkedIn','noticePeriod',
-  'comments'];
+  displayedColumns: string[] = ['select', 'name', 'lastName','email','phone','city','technology',
+  'experience','isRemote','salary','position','seniority','noticePeriod'];
   dataSource = new MatTableDataSource<Employee>([]);
   selection = new SelectionModel<Employee>(true, []);
 

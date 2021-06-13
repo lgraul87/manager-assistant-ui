@@ -23,7 +23,7 @@ export class CandidateComponent implements OnInit {
   candidates!: Candidate[];
 
   displayedColumns: string[] = ['select', 'name', 'last name','email','phone','isAvailable',
-  'city','technology','experience','isRemote','comments','linkedIn','noticePeriod'];
+  'city','technology','experience','isRemote','noticePeriod'];
   dataSource = new MatTableDataSource<Candidate>([]);
   selection = new SelectionModel<Candidate>(true, []);
 

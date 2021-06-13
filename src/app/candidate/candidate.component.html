@@ -62,7 +62,7 @@
             <ng-container matColumnDef="isAvailable">
                 <th mat-header-cell *matHeaderCellDef>Available</th>
                 <td mat-cell *matCellDef="let candidate">
-                    {{candidate.isAvailable}}
+                    {{(candidate.isAvailable) ? "Yes" : "No"}}
                 </td>
             </ng-container>
 
@@ -83,35 +83,21 @@
             <ng-container matColumnDef="experience">
                 <th mat-header-cell *matHeaderCellDef>Experience</th>
                 <td mat-cell *matCellDef="let candidate">
-                    {{candidate.experience}}
+                    {{candidate.experience | date}}
                 </td>
             </ng-container>
 
             <ng-container matColumnDef="isRemote">
                 <th mat-header-cell *matHeaderCellDef>Remote</th>
                 <td mat-cell *matCellDef="let candidate">
-                    {{candidate.isRemote}}
-                </td>
-            </ng-container>
-
-            <ng-container matColumnDef="comments">
-                <th mat-header-cell *matHeaderCellDef>Comments</th>
-                <td mat-cell *matCellDef="let candidate ">
-                    {{candidate.comments}}
-                </td>
-            </ng-container>
-
-            <ng-container matColumnDef="linkedIn">
-                <th mat-header-cell *matHeaderCellDef>LinkedIn</th>
-                <td mat-cell *matCellDef="let candidate ">
-                    {{candidate.linkedIn}}
+                    {{(candidate.isRemote) ? "Yes" : "No"}}
                 </td>
             </ng-container>
 
             <ng-container matColumnDef="noticePeriod">
-                <th mat-header-cell *matHeaderCellDef>Notice Period (week/s)</th>
+                <th mat-header-cell *matHeaderCellDef>Notice Period</th>
                 <td mat-cell *matCellDef="let candidate">
-                    {{candidate.noticePeriod}}
+                    {{candidate.noticePeriod}} {{(candidate.noticePeriod > 1) ? "Weeks" : "Week"}}
                 </td>
             </ng-container>
 
