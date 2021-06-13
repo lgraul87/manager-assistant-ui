@@ -8,5 +8,23 @@
 }
 
 .active {
-    background-color: rgba(0, 0, 0, .04);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.user-info {
+    padding: 50px 25px;
+    .email {
+        font-size: 1.1em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .role {
+        font-size: 2em;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 5px;
+    }
+}
+.list {
+    padding-top: 0;
 }

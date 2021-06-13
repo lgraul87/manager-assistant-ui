@@ -1,0 +1,29 @@
+<div class="bg"></div>
+<div fxFill class="wrapper">
+    <mat-card class="wrapper-login mat-elevation-z8">
+        <form>
+            <ng-container [formGroup]="form">
+                <div fxLayout="column wrap">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="text" matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
+                        <mat-error *ngIf="email.hasError('email')">Email is not a valid email</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput placeholder="Password" formControlName="password">
+                        <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+                        <mat-error *ngIf="password.hasError('minlength')">
+                            Password is too short, minimum of 4 characters
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button class="btn-login" mat-raised-button color="primary" [disabled]="!form.valid"
+                        (click)="login()">LOG IN</button>
+                </div>
+            </ng-container>
+        </form>
+    </mat-card>
+</div>
