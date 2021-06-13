@@ -22,6 +22,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 const material = [
     MatSidenavModule,
@@ -42,7 +44,8 @@ const material = [
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
 ];
 
 @NgModule({

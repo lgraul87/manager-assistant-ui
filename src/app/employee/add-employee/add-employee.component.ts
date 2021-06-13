@@ -166,7 +166,7 @@ export class AddEmployeeComponent implements OnInit {
         Validators.maxLength(255),
       ]],
 
-      noticePeriod: "",
+      noticePeriod: "1",
       isRemote: ""
     });
   }
