@@ -20,7 +20,7 @@ export class EmployeesService {
   }
 
   getEmployee(id: string): Observable<Employee> {
-    return this.http.get<Employee>(`http://localhost:3000/employees/${id}`);
+    return this.http.get<Employee>(`${this.url}/employees/${id}`);
   }
 
   addEmployee(employee: Employee): Observable<Employee> {
@@ -32,6 +32,6 @@ export class EmployeesService {
   }
 
   deleteEmployee(id:string): Observable<Employee>{
-    return this.http.delete<Employee>(`http://localhost:3000/employees/${id}`);
+    return this.http.delete<Employee>(`${this.url}/employees/${id}`);
   }
 }

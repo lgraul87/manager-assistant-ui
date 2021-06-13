@@ -32,6 +32,6 @@ export class CandidatesService {
     }
 
     deleteCandidate(id: string): Observable<Candidate> {
-        return this.http.delete<Candidate>(`http://localhost:3000/candidates/${id}`);
+        return this.http.delete<Candidate>(`${this.url}/candidates/${id}`);
     }
 }
